@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Hash SHA-3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+    <h1>Calculadora de Hash SHA-3</h1>
+    <input type="text" id="inputText" placeholder="Texto a hashear">
+    <button onclick="calculateSHA3()">Calcular SHA-3</button>
+    <p>Resultado SHA-3-256:</p>
+    <div id="output"></div>
+
+    <script>
+        function calculateSHA3() {
+            const inputText = document.getElementById('inputText').value;
+            const sha3Hash = CryptoJS.SHA3(inputText, { outputLength: 256 }); // 256 bits para SHA-3-256
+            document.getElementById('output').innerText = sha3Hash.toString();
+        }
+    </script>
+</body>
+</html>
